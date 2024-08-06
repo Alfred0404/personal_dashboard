@@ -40,9 +40,11 @@ The project uses a .env file wich contain environement variables such as Google 
 - Create a new project on [Google Cloud Console](https://console.cloud.google.com)
 - Activate Youtube Data API V3
 - Create credentials for Oauth 2.0 and API Key
-- Create an [weatherapi](https://www.weatherapi.com/) account and grab your weather api key
-- Create a `.env` file (outside of `src` folder)
+- Create a [weatherapi](https://www.weatherapi.com/) account and grab your weather api key
+- Create a `.env` file in the root directory.
 - Add these environnement variables and: `VITE_GOOGLE_CLIENT_ID`, `VITE_YOUTUBE_PLAYLIST_ID`, `VITE_WEATHER_API_KEY`.
+
+Follow [these](https://support.google.com/calendar/answer/41207?hl=en) steps to embed your Google Calendar.
 
 And you are ready to go 🚀!
 
@@ -76,6 +78,10 @@ Don't hesitate to contribute!
 5. Create a Pull Request
 
 Thank you for taking the time to contribute! If you have any questions or suggestions, please feel free to open an issue.
+
+## References
+
+I used [@firejune](https://github.com/firejune) [jandee](https://github.com/firejune/jandee) repo to embed my github contribution chart 🤝.
 
 ## License
 
