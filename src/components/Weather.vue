@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
 
+const weather_api_key = import.meta.env.VITE_WEATHER_API_KEY;
+
 const weather_infos = ref({
   location: "",
   temperature: "",
@@ -10,7 +12,7 @@ const weather_infos = ref({
 
 onMounted(async () => {
   const response = await fetch(
-    "http://api.weatherapi.com/v1/current.json?key=2a2a876ec0f944bc8d5111359240508&q=Paris&aqi=no",
+    `http://api.weatherapi.com/v1/current.json?key=${weather_api_key}&q=Paris&aqi=no`,
   );
   const weather = await response.json();
 

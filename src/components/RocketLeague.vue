@@ -63,11 +63,11 @@ onMounted(() => {
 <template>
   <div class="rounded-xl bg-indigo-900 p-3 flex flex-col">
     <p>Upcoming matches</p>
-    <div class="flex w-full flex-grow flex-col items-center justify-center gap-2 pt-2">
+    <div class="flex w-full flex-grow flex-col items-center justify-end gap-2 pt-2">
       <div
         v-for="match in match_info"
         :key="match.date"
-        class="flex w-full flex-col items-start justify-between rounded-lg bg-indigo-800 p-2"
+        class="flex w-full flex-col items-start justify-between rounded-lg bg-indigo-800 p-2 hover:bg-indigo-700 transition"
       >
         <RLMatch :match="match" />
       </div>
