@@ -27,7 +27,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="h-full rounded-xl bg-indigo-900 p-3 felx-flex-col">
+  <div class="h-full rounded-xl bg-indigo-900 p-3 flex flex-col">
     <p>Weather</p>
     <div class="flex-grow flex flex-col items-start justify-center">
       <p class="text-3xl text-indigo-50">{{ weather_infos.location }}</p>

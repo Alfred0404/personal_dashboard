@@ -4,6 +4,8 @@
 
 This project is a personal dashboard. It has a lot of components such as google calendar, useful links, the last video of your youtube playlist, or even the 2 upcoming RLCS matches ! I designed it to be a cosy place, like a lobby.
 
+Please note that this project is designed to be used only by me, so ther is a lot of configuration in order to make it work on your system.
+
 ## 🛠️ Project stack
 
 The project is built with the following technologies:
@@ -42,7 +44,9 @@ The project uses a .env file wich contain environement variables such as Google 
 - Create credentials for Oauth 2.0 and API Key
 - Create a [weatherapi](https://www.weatherapi.com/) account and grab your weather api key
 - Create a `.env` file in the root directory.
-- Add these environnement variables and: `VITE_GOOGLE_CLIENT_ID`, `VITE_YOUTUBE_PLAYLIST_ID`, `VITE_WEATHER_API_KEY`.
+- Add these environnement variables and: `VITE_GOOGLE_CLIENT_ID`, `VITE_YOUTUBE_PLAYLIST_ID`, `VITE_WEATHER_API_KEY`, `VITE_GOOGLE_CALDENDAR_LINK, VITE_SPOTIFY_PLAYLIST_LINK`.
+- Go to spotify, click on one of your playlist, share > embed > show code > copy the src link.
+- Lastly, replace the variable github_username in `GithubContributions.vue` by your github username.
 
 Follow [these](https://support.google.com/calendar/answer/41207?hl=en) steps to embed your Google Calendar.
 

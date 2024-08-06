@@ -6,7 +6,7 @@ import RocketLeague from "./RocketLeague.vue";
 import Weather from "./Weather.vue";
 import Calendar from "./Calendar.vue";
 import Youtube from "./Youtube.vue";
-import Articles from "./Articles.vue";
+import Spotify from "./Spotify.vue";
 import CheatSheets from "./CheatSheets.vue";
 
 const access_token = ref("");
@@ -14,7 +14,7 @@ const access_token = ref("");
 
 <template>
   <div
-    class="m-2 grid h-full grid-cols-10 grid-rows-8 gap-2 rounded-xl text-indigo-300"
+    class="m-2 grid h-full grid-cols-10 grid-rows-none auto-rows-auto gap-2 rounded-xl text-indigo-300"
   >
     <Calendar class="col-span-3 row-span-5" />
     <Grades class="col-span-3 row-span-2" />
@@ -26,7 +26,7 @@ const access_token = ref("");
     <Youtube class="col-span-4 row-span-3" v-else access_token="" />
     <RocketLeague class="col-span-3 row-span-3" />
     <Weather class="col-span-2 row-span-2" />
-    <Articles class="col-span-2 row-span-4" />
+    <Spotify class="col-span-2 row-span-4" />
     <GithubContributions class="col-span-4 row-span-2" />
     <CheatSheets class="col-span-4 row-span-2" />
   </div>
