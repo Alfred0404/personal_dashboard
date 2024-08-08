@@ -1,7 +1,7 @@
 <script setup>
 import axios from "axios";
 import GoogleLogin from "./GoogleLogin.vue";
-import { ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 
 const props = defineProps(["access_token"]);
 const access_token = ref(null); // Remplace par le token d'accès obtenu après l'authentification
@@ -13,7 +13,17 @@ watch(access_token.value, (new_access_token) => {
   console.log("access token from youtube : ", new_access_token);
 });
 
+function get_cookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+  else return "";
+}
+
 const fetch_playlist_videos = async () => {
+  if (!access_token.value) {
+    access_token.value = get_cookie("google_access_token");
+  }
   console.log("access token from youtube : ", access_token.value);
 
   try {
@@ -39,6 +49,7 @@ const fetch_playlist_videos = async () => {
     console.log(last_video_id.value);
   } catch (error) {
     console.error("Erreur lors de la récupération des vidéos:", error);
+    access_token.value = "";
   }
 };
 
@@ -47,6 +58,10 @@ const handle_token_received = (token) => {
   access_token.value = token;
   fetch_playlist_videos();
 };
+
+onMounted(() => {
+  fetch_playlist_videos();
+});
 </script>
 
 <template>

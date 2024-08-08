@@ -14,8 +14,8 @@ setInterval(() => {
 </script>
 
 <template>
-  <div class="flex flex-row items-center justify-center gap-2 p-3 text-indigo-50">
-    <p class="text-2xl w-full">{{ date }}</p>
+  <div class="flex flex-row items-center gap-2 p-3 text-indigo-50">
+    <p class="text-2xl w-fit">{{ date }}</p>
     <p class="text-md text-indigo-300">{{ time }}</p>
   </div>
 </template>

@@ -6,8 +6,8 @@ import Hello from "./Hello.vue";
 
 <template>
   <div class="grid grid-cols-10 gap-2">
-    <Date class="col-span-2" />
-    <UseFullLinks class="col-span-7" />
+    <Date class="col-span-3" />
+    <UseFullLinks class="col-span-6" />
     <Hello class="col-span-1" name="Alfred" />
   </div>
 </template>

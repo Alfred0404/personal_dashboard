@@ -5,6 +5,13 @@ import { onMounted } from "vue";
 const client_id = import.meta.env.VITE_GOOGLE_CLIENT_ID; // Remplace par ton propre Client ID
 const emit = defineEmits(["token-received"]);
 
+function set_cookie(nom, valeur, jours_expiration) {
+  const date = new Date();
+  date.setTime(date.getTime() + jours_expiration * 24 * 60 * 60 * 1000);
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = nom + "=" + valeur + ";" + expires + ";path=/";
+}
+
 const load_gapi_client = () => {
   gapi.load("client:auth2", () => {
     gapi.client
@@ -31,6 +38,9 @@ const sign_in_with_google = () => {
         .currentUser.get()
         .getAuthResponse().access_token;
       console.log("Token d'accès:", access_token);
+
+      set_cookie("google_access_token", access_token, 1);
+
       emit("token-received", access_token);
       console.log("event emited!");
     })
