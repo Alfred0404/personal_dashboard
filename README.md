@@ -17,6 +17,8 @@ The project is built with the following technologies:
 
 ### Prerequisites
 
+Be an ECE student with an access to campusonline
+
 Make sure you have **[Node.js](https://nodejs.org/fr)** and **[npm](https://www.npmjs.com/)** (Node Package Manager) installed on your machine.
 
 ## Installation
@@ -38,17 +40,35 @@ npm install
 The Youtube component use the [Youtube data api v3](https://developers.google.com/youtube/v3/docs?hl=en) and [Google Oauth 2.0](https://developers.google.com/identity/protocols/oauth2?hl=en) to log into to your personal Youtube account and fetch your playlist.
 
 The project uses a .env file wich contain environement variables such as Google client Id, your playlist Id, or your weather api key.
+- Create a `.env` file in the root directory.
 
+### Youtube Authentification (GCP)
 - Create a new project on [Google Cloud Console](https://console.cloud.google.com)
 - Activate Youtube Data API V3
 - Create credentials for Oauth 2.0 and API Key
+- Add these environnement variables : `VITE_GOOGLE_CLIENT_ID`, `VITE_YOUTUBE_PLAYLIST_ID`
+
+### Google Calendar
+- Go to Google Calendar, `settings`, select the agenda you want to embed, `integration code`. ‼️ Grab only the link, not the iframe tag.
+- Add this environnement variable: `VITE_GOOGLE_CALDENDAR_LINK`.
+
+### WeatherApi
 - Create a [weatherapi](https://www.weatherapi.com/) account and grab your weather api key
-- Create a `.env` file in the root directory.
-- Add these environnement variables and: `VITE_GOOGLE_CLIENT_ID`, `VITE_YOUTUBE_PLAYLIST_ID`, `VITE_WEATHER_API_KEY`, `VITE_GOOGLE_CALDENDAR_LINK, VITE_SPOTIFY_PLAYLIST_LINK`.
-- Go to spotify, click on one of your playlist, share > embed > show code > copy the src link.
-- Lastly, replace the variable github_username in `GithubContributions.vue` by your github username.
+- Add this environnement variable: `VITE_WEATHER_API_KEY`.
+
+### Spotify
+- Go to spotify, click on one of your playlist, `share > embed > show code` and copy the src link.
+- Add this environnement variable: `VITE_SPOTIFY_PLAYLIST_LINK`.
+
+### Github
+- Lastly, replace the variable github_username in [GithubContributions.vue](/src/components/GithubContributions.vue) by your github username.
+
 
 Follow [these](https://support.google.com/calendar/answer/41207?hl=en) steps to embed your Google Calendar.
+
+To get your grades, you will need to install the [TamperMonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) Chrome extension.
+Once it's done, create a new Tampermonkey script and paste the [extract_grades_json_and_calc_averages.js](/src/tampermonkey/extract_grades_json_and_calc_averages.js).
+Everything should be working.
 
 And you are ready to go 🚀!
 
@@ -85,7 +105,8 @@ Thank you for taking the time to contribute! If you have any questions or sugges
 
 ## References
 
-I used [@firejune](https://github.com/firejune) [jandee](https://github.com/firejune/jandee) repo to embed my github contribution chart 🤝.
+I used [@firejune](https://github.com/firejune)'s [jandee](https://github.com/firejune/jandee) repo to embed my github contribution chart 🤝.
+I used [@BragdonD](https://github.com/BragdonD)'s [ECE-scripts](https://github.com/BragdonD/ECE-Scripts) repo to scrap my grades on the campusonline platform, I couldn't have done this feature without his work 🤝.
 
 ## License
 
